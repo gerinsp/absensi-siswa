@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // Dashboard
     let currentNumber = 0;
     let timeOff = "10:30";
     console.log(timeOff);
@@ -56,4 +57,6 @@ $(document).ready(function () {
     });
 
     $('#alert-absensi').text('Batas waktu absensi dibuka sampai jam ' + timeOff);
+
+
 });
