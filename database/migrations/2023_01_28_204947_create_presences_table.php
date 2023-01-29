@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('presences', function (Blueprint $table) {
             $table->id();
-            $table->string('student_nis')->unique();
+            $table->string('student_nis');
             $table->date('tanggal');
             $table->string('status');
             $table->string('keterangan')->nullable();

@@ -40,7 +40,18 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {    
+        $now = date('Y-m-d');
         $student = Student::where('nis', $request->student_nis)->first();
+        $presence = Presence::where('tanggal', $now)->get();
+
+        foreach($presence as $pre) {
+            if($pre->student_nis === $request->student_nis) {
+                return response()->json([
+                    'message' => 'Siswa sudah melakukan absensi.'
+                ]);
+            }
+        }
+
         if(!$student) {
             return response()->json([
                 'message' => 'Data siswa tidak ditemukan.'

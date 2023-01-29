@@ -1,14 +1,14 @@
 $(document).ready(function () {
     // Dashboard
+    let currentDate = new Date();
     let currentNumber = 0;
-    let timeOff = "10:30";
+    const timeOff = "10:30";
     console.log(timeOff);
     let tanggal = new Date().toISOString().slice(0, 10);
     let scanner = new Instascan.Scanner({
         video: document.getElementById('preview')
     });
     scanner.addListener('scan', function (content) {
-        let currentDate = new Date();
         let jam = currentDate.getHours() + ":" + currentDate.getMinutes();
         currentNumber++;
 
@@ -58,5 +58,12 @@ $(document).ready(function () {
 
     $('#alert-absensi').text('Batas waktu absensi dibuka sampai jam ' + timeOff);
 
+    setInterval(function () {
+        let currentDate = new Date();
+        let hour = currentDate.getHours();
+        let minutes = currentDate.getMinutes();
+        let second = currentDate.getSeconds();
+        $('#time').text(hour + ":" + minutes + ":" + second);
+    }, 1000);
 
 });

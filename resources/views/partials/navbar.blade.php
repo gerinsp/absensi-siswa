@@ -11,13 +11,13 @@
                     <a class="nav-link {{ $active === 'dashboard' ? 'active' : '' }}" href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($active === "students") ? 'active' : '' }}" href="/students">Data Siswa</a>
+                    <a class="nav-link {{ ($active === "students") ? 'active' : '' }}" href="/students">Siswa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($active === "classrooms") ? 'active' : '' }}" href="/classrooms">Data Kelas</a>
+                    <a class="nav-link {{ ($active === "classrooms") ? 'active' : '' }}" href="/classrooms">Kelas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($active === "presences") ? 'active' : '' }}" href="/presences">Data Absensi</a>
+                    <a class="nav-link {{ ($active === "presences") ? 'active' : '' }}" href="/presences">Absensi</a>
                 </li>
 
             </ul>

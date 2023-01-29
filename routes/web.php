@@ -21,4 +21,4 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::get('/students', [StudentController::class, 'index']);
+Route::resource('/students', StudentController::class);

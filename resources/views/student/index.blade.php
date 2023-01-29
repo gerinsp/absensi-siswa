@@ -39,26 +39,27 @@
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
-                    @foreach ($students as $student)
                     <tbody>
+                        @foreach ($students as $student)
                       <tr>
-                        <th scope="row">{{ $loop->iteration }}</th>
+                        <th scope="row">{{ ($students ->currentpage()-1) * $students ->perpage() + $loop->index + 1 }}</th>
                         <td>{{ $student->nama }}</td>
                         <td>{{ $student->nis }}</td>
                         <td>{{ $student->classroom->nama_kelas }}</td>
                         <td>{{ $student->jenis_kelamin }}</td>
                         <td></td>
                       </tr>
+                      @endforeach
                     </tbody>
-                    @endforeach
                   </table>
+                  {{ $students->links() }}
             </div>
         </div>
 
     <!-- modal -->
         <div class="modal fade" id="modal-upload" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="/upload" method="post" enctype="multipart/form-data">
+                <form action="/students" method="post" enctype="multipart/form-data">
                     @csrf
                     <div id="modalbox" class="modal-content rounded-4 shadow">
                     <div class="modal-header border-bottom-0">

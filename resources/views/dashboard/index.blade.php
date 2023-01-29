@@ -22,7 +22,10 @@
         <div class="col mb-3" id="absensi">
             <div class="card">
                 <div class="card-header">
-                    Kamera Scanner
+                    <div class="d-flex float-end" id="time">
+                        
+                    </div>
+                    <a>Kamera Scanner</a> 
                 </div>
                 <div class="card-body">
                     <video id="preview"></video>
@@ -43,55 +46,8 @@
 
                         </div>
                     </div>
-                    <div id="data" class="overflow-auto" style="height:330px">
-                        <div class="card mb-3">
-                            <div class="card-header border-0">
-                             <div class="d-flex justify-content-end float-end">
-                                 <small class="pt-1">12:30</small>
-                             </div>
-                             <a></a> 1.&nbsp;&nbsp;&nbsp; 121314 | Gerin Sena Pratama | 12 IPA 2 </a>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-header border-0">
-                             <div class="d-flex justify-content-end float-end">
-                                 <small class="pt-1">12:30</small>
-                             </div>
-                             <a></a> 1.&nbsp;&nbsp;&nbsp; 121314 | Gerin Sena Pratama | 12 IPA 2 </a>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-header border-0">
-                             <div class="d-flex justify-content-end float-end">
-                                 <small class="pt-1">12:30</small>
-                             </div>
-                             <a></a> 1.&nbsp;&nbsp;&nbsp; 121314 | Gerin Sena Pratama | 12 IPA 2 </a>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-header border-0">
-                             <div class="d-flex justify-content-end float-end">
-                                 <small class="pt-1">12:30</small>
-                             </div>
-                             <a></a> 1.&nbsp;&nbsp;&nbsp; 121314 | Gerin Sena Pratama | 12 IPA 2 </a>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-header border-0">
-                             <div class="d-flex justify-content-end float-end">
-                                 <small class="pt-1">12:30</small>
-                             </div>
-                             <a></a> 1.&nbsp;&nbsp;&nbsp; 121314 | Gerin Sena Pratama | 12 IPA 2 </a>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-header border-0">
-                             <div class="d-flex justify-content-end float-end">
-                                 <small class="pt-1">12:30</small>
-                             </div>
-                             <a></a> 1.&nbsp;&nbsp;&nbsp; 121314 | Gerin Sena Pratama | 12 IPA 2 </a>
-                            </div>
-                        </div>
+                    <div id="data" class="overflow-auto" style="height:325px">
+                        
                     </div>
                 </div>
             </div>

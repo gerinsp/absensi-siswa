@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class StudentController extends Controller
 {
@@ -14,7 +15,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::with('classroom')->get();
+        $student = Student::with('classroom')->paginate(4);
         return view('student.index', [
             'title' => 'Data Siswa',
             'active' => 'students',
@@ -40,7 +41,31 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi file yang diupload
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx'
+        ]);
+
+        // Mendapatkan file yang diupload
+        $file = $request->file('file');
+
+        // Membaca data dari file Excel
+        $spreadsheet = IOFactory::load($file);
+        $worksheet = $spreadsheet->getActiveSheet();
+        $rows = $worksheet->toArray();
+
+        // Menyimpan data ke database
+        foreach ($rows as $row) {
+            Student::create([
+                'nis' => $row[0],
+                'classroom_id' => $row[1],
+                'nama' => $row[2],
+                'jenis_kelamin' => $row[3],
+            ]);
+        }
+
+        return redirect('/students')->with('success', 'Data siswa berhasil diupload.');
+
     }
 
     /**
